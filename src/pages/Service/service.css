@@ -1,0 +1,468 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    box-sizing: border-box;
+  }
+  .ServicePagegeneral-header {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    color: #232536;
+    padding: 15px 0;
+  }
+  
+  .ServicePagegeneral-title {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 40px;
+    color: #232536;
+    width: 549px;
+    padding: 15px 0;
+  }
+  
+  .ServicePagegeneral-des {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #232536;
+    opacity: 0.87;
+    padding: 15px 0;
+  }
+  .ServicePagesquare {
+    width: 28px;
+    height: 28px;
+    background: #1d4499;
+    transform: rotate(-90deg);
+    margin-bottom: 17px;
+  }
+  
+  .ServicePageslider {
+    width: 100%;
+    background-color: #f2f2f2;
+    font-style: normal;
+    color: #1f2b6c;
+  }
+  .ServicePageslider > img {
+    width: 100%;
+    object-fit: contain;
+    background-color: #f2f2f2;
+  }
+  .ServicePageslider-header {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    margin-top: -180px;
+  }
+  
+  .ServicePageslider-title {
+    margin-top: -150px;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+  }
+  .ServicePageline {
+    display: flex;
+    width: 100%;
+  }
+  .ServicePageline-left {
+    width: 20%;
+    background-color: #bfd2f8;
+    height: 6px;
+  }
+  
+  .ServicePageline-center {
+    width: 60%;
+    background-color: #1f2b6c;
+    height: 6px;
+  }
+  .ServicePageline-right {
+    width: 20%;
+    background-color: #159eec;
+    height: 6px;
+  }
+  .ServicePageintro {
+    padding: 70px 0;
+  }
+  
+  .ServicePageintro-header {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #000000;
+    opacity: 0.87;
+    margin: 25px 0;
+  }
+  
+  .ServicePageintro-title {
+    width: 908px;
+    height: 116px;
+    text-align: left;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 58px;
+    color: #232536;
+    margin: 25px 0;
+  }
+  
+  .ServicePageintro-des {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #232536;
+    opacity: 0.87;
+    margin-bottom: 20px;
+  }
+  
+  .ServicePageintro-items {
+    margin-top: 20px;
+    width: 100%;
+  }
+  .ServicePageintro-item {
+    /* margin: 0 50px; */
+    margin-left: 50px;
+    border: 1px solid rgba(35, 37, 54, 0.17);
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+  }
+  .ServicePageintro-item_number {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 32px;
+    color: #232536;
+    opacity: 0.2;
+    text-align: right;
+    padding-right: 10px;
+  }
+  
+  .ServicePageintro-item_title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 28px;
+    color: #000000;
+    padding-left: 50px;
+  }
+  .ServicePageintro-item_des {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #232536;
+    opacity: 0.6;
+    padding-left: 50px;
+    padding-bottom: 10px;
+  }
+  
+  .ServicePageproduct {
+    background: #d4e2fa;
+    padding: 50px 0;
+  }
+  
+  .ServicePageproduct-header {
+    width: 824px;
+    padding: 40px 0;
+  }
+  
+  .ServicePageproduct-title {
+    width: 100%;
+    background: #1d459a;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #ffffff;
+    opacity: 0.87;
+    text-align: center;
+  }
+  
+  .ServicePageproduct-items {
+    padding: 20px 0;
+  }
+  
+  .ServicePageproduct-item:hover {
+    transform: scale(1.04);
+    transition: 0.5s;
+  }
+  .ServicePageproduct-item {
+    padding: 10px 0;
+  }
+  .ServicePageproduct-item__img > img {
+    width: 100%;
+    object-fit: contain;
+  }
+  .ServicePageproduct-item__img::before {
+    content: "";
+    display: block;
+    width: 397px;
+    height: 299px;
+    position: absolute;
+    background: linear-gradient(180deg, rgba(217, 217, 217, 0) 0%, #000000 100%);
+  }
+  .ServicePageproduct-item_title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 28px;
+    color: #ffffff;
+    margin-top: -120px;
+    margin-left: 30px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .ServicePageproduct-item_des {
+    color: #ffffff;
+    margin-left: 30px;
+    opacity: 0.6;
+    position: relative;
+    z-index: 1;
+  }
+  .ServicePagenews {
+    background: #1d459a;
+    padding-top: 51px;
+    padding-bottom: 71px;
+    font-style: normal;
+    padding-bottom: 70px;
+  }
+  
+  .ServicePagenews-header {
+    font-weight: 400;
+    font-size: 16px;
+    color: #bfd2f8;
+  }
+  
+  .ServicePagenews-title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    color: #fafdfe;
+    padding: 10px 0;
+  }
+  
+  .ServicePagenews-des {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #bfd2f8;
+    padding-bottom: 35px;
+    width: 573px;
+  }
+  
+  .ServicePagenews-items {
+    padding-top: 30px;
+  }
+  .ServicePagenews-items:hover {
+    transform: scale(1.04);
+    transition: 0.5s;
+  }
+  .ServicePagenews-item {
+  }
+  
+  .ServicePagenews-item__img > img {
+    width: 100%;
+    object-fit: contain;
+    background-color: red;
+  }
+  .ServicePagenews-item-text {
+    margin-top: -150px;
+    color: #ffffff;
+    padding-left: 30px;
+    position: relative;
+    z-index: 1;
+  }
+  .ServicePagenews-item__img::before {
+    content: "";
+    display: block;
+    width: 394px;
+    height: 382px;
+    position: absolute;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  }
+  .ServicePagenews-item__title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 5px 0;
+  }
+  
+  .ServicePagenews-item__des {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: justify;
+    letter-spacing: 0.1em;
+    width: 277px;
+    padding: 5px 0;
+    color: #ffffff;
+  }
+  .ServicePageadvise_bg {
+    background: #bdd1f8;
+  }
+  .ServicePageadvise {
+    width: 100%;
+    font-style: normal;
+  }
+  .ServicePageadvise-item {
+    padding: 50px 0;
+  }
+  .ServicePageadvise-left {
+    /* margin-right: 1px; */
+  }
+  
+  .ServicePageadvise-right {
+    /* margin-left: 1px; */
+  
+  }
+  
+  .ServicePageadvise-header {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    color: #000000;
+    opacity: 0.87;
+    padding: 15px 0;
+  }
+  
+  .ServicePageadvise-title {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 54px;
+    color: #232536;
+    padding: 15px 0;
+  }
+  
+  .ServicePageadvise-des {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #232536;
+    opacity: 0.6;
+    padding: 15px 0;
+  }
+  .ServicePageadvise-img > img {
+    width: 100%;
+    height: 523px;
+    object-fit: contain;
+  }
+  /* Table và moblie */
+@media (max-width: 1023px) {
+  .hide-on-table-mobile {
+    display: none;
+  }
+}
+/* Table*/
+@media (min-width: 740px) and (max-width: 1023px) {
+  .hide-on-table {
+    display: none;
+  }
+}
+/* Mobile*/
+@media (max-width: 739px) {
+  .hide-on-mobile {
+    display: none;
+  }
+  .ServicePageintro {
+    padding-bottom: 50px;
+    padding-top: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .ServicePageintro-header {
+    font-size: 13px;
+    padding: 0;
+    margin: 10px 0;
+  }
+  .ServicePageintro-title {
+    font-size: 15px;
+    margin: 10px 0;
+    line-height: 20px;
+    height: auto;
+    padding: 0;
+  }
+  .ServicePageintro-des {
+    font-size: 13px;
+    padding: 0;
+    margin: 10px 0;
+  }
+  .ServicePageintro-items {
+    padding-top: 10px;
+    padding-bottom: 0px;
+  }
+  .ServicePagenews-items:hover {
+    transform: scale(1.01);
+  }
+  .ServicePageintro-item {
+    margin-left: 0;
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+  }
+  .ServicePageintro-item_title {
+    font-size: 13px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+  }
+  .ServicePagenews {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .ServicePagenews-header {
+    font-size: 13px;
+    padding: 0;
+    margin: 10px 0;
+  }
+  .ServicePagenews-title {
+    font-size: 15px;
+    margin: 10px 0;
+    line-height: 20px;
+    height: auto;
+    padding: 0;
+  }
+  .ServicePagenews-des {
+    font-size: 13px;
+    padding: 0;
+    margin: 10px 0;
+    width: 323px;
+  }
+  .ServicePagenews-item-text {
+    margin-top: -100px;
+    padding-left: 10px;
+
+  }
+  .ServicePagenews-item__title {
+    font-size: 10px;
+    margin: 10px 0;
+    line-height: 20px;
+    height: auto;
+    padding: 0;
+    line-height: 10px;
+
+  }
+  .ServicePagenews-item__des {
+    font-size: 7px;
+    padding: 0;
+    margin: 10px 0;
+    width: 123px;
+    line-height: 10px;
+  }
+  .ServicePagenews-item__img::before {
+    width: 164px;
+    height: 159px;
+  }
+}
