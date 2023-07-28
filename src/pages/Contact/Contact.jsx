@@ -51,7 +51,7 @@ export default function Contact() {
     }
   };
   return (
-    <section>
+    <section style={{overflowX:"hidden",overflowY:"hidden"}}>
       <Navbar />
       <SliderHeader title="Liên Hệ" />
       <div class="contact">

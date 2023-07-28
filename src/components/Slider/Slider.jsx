@@ -12,8 +12,7 @@ const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
-  /* Reduce height for mobile */
-  ${mobile({ height: "50vh",width:"100vw" })}
+  ${mobile({ height: "50vh",width:"100%" })}
 `;
 
 const Wrapper = styled.div`
@@ -75,13 +74,14 @@ const Image = styled.img`
   height: 80%;
   ${mobile({ height: "50%",width:"100vw" })}
 `;
-
 const InfoContainer = styled.div`
   margin-top: -180px;
   position: relative;
   z-index: 1000;
-  ${mobile({ position:"absolute",marginTop:"-350px",marginLeft:"30px",width:"100vw" })}
+  ${mobile({ position: "absolute",  marginTop: "calc(-67vh + 180px)", marginLeft: "5vw", width: "100vw" })}
 `;
+
+
 const Header = styled.p`
   font-size: 70px;
   font-weight: 1000;

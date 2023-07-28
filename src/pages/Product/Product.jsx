@@ -1,6 +1,6 @@
 import DOMPurify from "dompurify";
 import { Add, Remove } from "@material-ui/icons";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { Link, useLocation } from "react-router-dom";
@@ -30,7 +30,7 @@ const ProductItems = styled.div`
 `;
 const ProductItem = styled.div`
   margin: 14px;
-  height: 60vh;
+  width: 100%;
   ${mobile({ margin: 0, height: "auto", paddingRight: "10px", width: "100vw" })}
 `;
 const ProductImg = styled.img`
@@ -123,14 +123,19 @@ const ProductDesDetails = styled.div`
   ${mobile({ display: "none" })}
 `;
 const ProductDesSumary = styled.div`
-  padding: 10px 0;
+  padding: 5px 0;
   font-weight: 400;
   font-size: 14px;
   line-height: 140%;
   color: #212124;
   box-sizing: border-box;
-  padding: 20px;
-  margin-bottom: 30px;
+  padding-left: 20px;
+  max-height: 210px;
+  min-height: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  ${mobile({ display: "none" })}
 `;
 const OrderContainer = styled.div`
   display: flex;
@@ -212,26 +217,33 @@ const BackProducts = styled.button`
   }
   ${mobile({ display: "none" })}
 `;
-const ProductsOthers = styled.div`
+
+const RelatedProductsContainer = styled.div`
   font-style: normal;
   width: 100%;
-  height: 300px;
-  height: auto;
-  padding-left: 30px;
+  // padding-left: 30px;
   overflow: hidden;
-  ${mobile({ display: "none" })}
+  position: relative;
+  ${mobile({ paddingBottom: 30, paddingLeft: 0 })}
 `;
-const ProductsOthersItemsWrapper = styled.div`
-  // display: flex;
-  // flex-wrap: nowrap;
-  // overflow-x: auto;
-  // scroll-behavior: smooth;
-  // scroll-snap-type: x mandatory;
+const scroll = keyframes`
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-45%);
+  }
 `;
-
-const ProductsOthersTitle = styled.div`
+const RelatedProductsWrapper = styled.div`
+  display: flex;
+  flex-wrap: nowrap;
+  width: fit-content;
+  overflow: hidden;
+  animation: ${scroll} 10s linear infinite;
+`;
+const RelatedProductsTitle = styled.div`
   font-weight: 900;
-  font-size: 25px;
+  font-size: 22px;
   line-height: 130%;
   color: #000000;
   background-color: #e4e4e4;
@@ -239,44 +251,40 @@ const ProductsOthersTitle = styled.div`
   padding: 10px 20px;
   border-bottom: 0.3px solid #000000;
 `;
-const ProductsOthersItems = styled.div`
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-wrap: nowrap;
-`;
-const ProductsOthersItem = styled.div`
-  wwidth: 260px;
-  height: auto;
-  margin: 10px;
+
+const RelatedProductItem = styled.div`
+  width: 260px;
+  margin: 0 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-  flex: 0 0 auto;
 `;
-const ProductsOthersItemImg = styled.img`
+
+const RelatedProductImg = styled.img`
   width: 100%;
   height: 295px;
   object-fit: contain;
 `;
-const ProductsOthersItemText = styled.div`
+
+const RelatedProductText = styled.div`
   padding: 10px 0;
-  width: 100%;
-  height: auto;
 `;
-const ProductsOthersItemTextHeader = styled.div`
+
+const RelatedProductTextHeader = styled.div`
   font-weight: 400;
   font-size: 14px;
   line-height: 130%;
   color: #000000;
   padding-left: 15px;
 `;
-const ProductsOthersItemTextModel = styled.div`
+
+const RelatedProductTextModel = styled.div`
   font-weight: 400;
   font-size: 14px;
   line-height: 130%;
   color: #000000;
   padding-left: 15px;
 `;
-const ProductsOthersItemTextCode = styled.div`
+
+const RelatedProductTextCode = styled.div`
   font-weight: 400;
   font-size: 12px;
   line-height: 130%;
@@ -361,8 +369,9 @@ const Product = () => {
       behavior: "smooth",
     });
   };
+
   return (
-    <div>
+    <div style={{overflowX:"hidden",overflowY:"hidden"}}>
       <Navbar />
       {loading ? (
         <Container>
@@ -483,42 +492,36 @@ const Product = () => {
                   </ProductDes>
                 </ProductItems>
               </div>
-              <ProductsOthers>
-                <ProductsOthersTitle>Sản phẩm khác</ProductsOthersTitle>
-                <ProductsOthersItemsWrapper>
-                  <ProductsOthersItems>
-                    <div className="row sm-gutter">
-                      {products.map((product) => (
-                        <ProductsOthersItem>
-                          <Link
-                            to={`/product/${product._id}`}
-                            key={product._id}
-                            style={{ textDecoration: "none" }}
-                            onClick={() => scrollToPosition(0)}
-                          >
-                            <ProductsOthersItemImg
-                              src={product.imgs[0]}
-                              alt={product.title}
-                            />
-
-                            <ProductsOthersItemText>
-                              <ProductsOthersItemTextHeader>
-                                {product.title}
-                              </ProductsOthersItemTextHeader>
-                              <ProductsOthersItemTextModel>
-                                Model : {product.model}
-                              </ProductsOthersItemTextModel>
-                              <ProductsOthersItemTextCode>
-                                Mã sp : {product.code}
-                              </ProductsOthersItemTextCode>
-                            </ProductsOthersItemText>
-                          </Link>
-                        </ProductsOthersItem>
-                      ))}
-                    </div>
-                  </ProductsOthersItems>
-                </ProductsOthersItemsWrapper>
-              </ProductsOthers>
+              <RelatedProductsContainer>
+                <RelatedProductsTitle>Sản phẩm khác</RelatedProductsTitle>
+                <RelatedProductsWrapper>
+                  {products.map((product, index) => (
+                    <RelatedProductItem key={index}>
+                      <Link
+                        to={`/product/${product._id}`}
+                        style={{ textDecoration: "none" }}
+                        onClick={() => scrollToPosition(0)}
+                      >
+                        <RelatedProductImg
+                          src={product.imgs[0]}
+                          alt={product.title}
+                        />
+                        <RelatedProductText>
+                          <RelatedProductTextHeader>
+                            {product.title}
+                          </RelatedProductTextHeader>
+                          <RelatedProductTextModel>
+                            Model: {product.model}
+                          </RelatedProductTextModel>
+                          <RelatedProductTextCode>
+                            Mã sp: {product.code}
+                          </RelatedProductTextCode>
+                        </RelatedProductText>
+                      </Link>
+                    </RelatedProductItem>
+                  ))}
+                </RelatedProductsWrapper>
+              </RelatedProductsContainer>
             </div>
           </div>
         </Container>

@@ -48,14 +48,16 @@ export default function News() {
     height: "200px";
   `;
   const NewsItemImgDiv = styled.div`
+  position: relative;
     &:before {
       content: "";
       display: block;
-      width: 394px;
-      height: 382px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       position: absolute;
       background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
-      ${mobile({ width: "168px", height: "163px" })}
     }
   `;
   const NewsItemImg = styled.img`

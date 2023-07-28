@@ -73,7 +73,7 @@ export default function News() {
   };
 
   return (
-    <section>
+    <section style={{overflowX:"hidden",overflowY:"hidden"}}>
       <Navbar />
       <SliderHeader title="Tin Tức" />
       {loading ? (

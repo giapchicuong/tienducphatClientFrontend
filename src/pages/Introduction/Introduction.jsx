@@ -41,9 +41,9 @@ export default function Introduction() {
     width: "15%",
   };
   return (
-    <section>
+    <section style={{overflowX:"hidden",overflowY:"hidden"}} >
       <Navbar />
-      <SliderHeader title="Giới Thiệu" />
+      <SliderHeader title="Giới Thiệu"/>
       <div class="IntroPageintro">
         <div class="grid wide">
           <div class="row sm-gutter">

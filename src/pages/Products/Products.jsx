@@ -69,7 +69,7 @@ export default function Products() {
   );
   const handlePageChange = (pageNumber) => {
     window.scrollTo({
-      top: 300,
+      top: 0,
       left: 0,
       behavior: "smooth",
     });
@@ -77,7 +77,7 @@ export default function Products() {
   };
 
   return (
-    <section>
+    <section style={{overflowX:"hidden",overflowY:"hidden"}}>
       <Navbar />
       <SliderHeader title="Sản Phẩm" />
       <section>

@@ -1,6 +1,6 @@
 .products {
   padding: 50px 0;
-  height: 100vh;
+  height: 100%;
 }
 .products-left_mobile {
   padding-bottom: 100px;
@@ -79,6 +79,7 @@
 }
 .products-right {
   font-style: normal;
+  margin-bottom: 30px;
 }
 
 .products-items {
@@ -193,7 +194,7 @@
     padding-left: 0px;
   }
   .products-item {
-    margin: 0px;
+    margin: 10px 0;
   }
   .products-left_mobile {
     display: block;

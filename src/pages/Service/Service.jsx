@@ -33,7 +33,7 @@ export default function Service() {
     width: "15%",
   };
   return (
-    <section>
+    <section style={{overflowX:"hidden",overflowY:"hidden"}}>
       <Navbar />
       <SliderHeader title="Dịch Vụ" />
       <div className="ServicePageintro">

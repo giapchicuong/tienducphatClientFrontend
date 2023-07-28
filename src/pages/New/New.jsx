@@ -49,7 +49,7 @@ export default function New() {
   }, [dispatch]);
 
   return (
-    <div>
+    <div style={{overflowX:"hidden",overflowY:"hidden"}}>
       <Navbar />
       <div class="new">
         <div class="grid wide">

@@ -21,7 +21,7 @@ export const Home = () => {
     });
   }, []);
   return (
-    <div className="container">
+    <div className="container" style={{overflowX:"hidden"}}>
       <Navbar />
       <Slider />
       <OurCustomer />
