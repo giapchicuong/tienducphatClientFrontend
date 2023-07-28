@@ -21,17 +21,17 @@ import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 const Container = styled.div`
   padding: 50px 0;
-  ${mobile({ padding: 0 ,width:"100vw",marginRight:"10px"})}
+  ${mobile({ padding: 0, width: "100vw", marginRight: "10px" })}
 `;
 
 const ProductItems = styled.div`
   padding-left: 30px;
-  ${mobile({paddingLeft:0,width:"100vw"})}
+  ${mobile({ paddingLeft: 0, width: "100vw" })}
 `;
 const ProductItem = styled.div`
   margin: 14px;
   height: 60vh;
-  ${mobile({ margin: 0,height:"auto",paddingRight:"10px" , width: "100vw"})}
+  ${mobile({ margin: 0, height: "auto", paddingRight: "10px", width: "100vw" })}
 `;
 const ProductImg = styled.img`
   width: 417px;
@@ -111,8 +111,7 @@ const ProductDesTitle = styled.div`
   text-transform: uppercase;
   padding: 10px 20px;
   border-bottom: 0.3px solid #000000;
-  ${mobile({ display:"none"})}
-
+  ${mobile({ display: "none" })}
 `;
 const ProductDesDetails = styled.div`
   padding: 10px 0;
@@ -121,8 +120,7 @@ const ProductDesDetails = styled.div`
   line-height: 140%;
   color: #212124;
   padding: 20px;
-  ${mobile({ display:"none"})}
-
+  ${mobile({ display: "none" })}
 `;
 const ProductDesSumary = styled.div`
   padding: 10px 0;
@@ -159,7 +157,12 @@ const ProductButton = styled.button`
   &:active {
     transform: translateY(4px);
   }
-  ${mobile({ width: "100vw",padidngBottom:"30px",paddingLeft:"20px",marginRight:"30px" })}
+  ${mobile({
+    width: "100vw",
+    padidngBottom: "30px",
+    paddingLeft: "20px",
+    marginRight: "30px",
+  })}
 `;
 const AmountContainer = styled.div`
   display: flex;
@@ -216,9 +219,16 @@ const ProductsOthers = styled.div`
   height: auto;
   padding-left: 30px;
   overflow: hidden;
-  ${mobile({ display:"none"})}
-
+  ${mobile({ display: "none" })}
 `;
+const ProductsOthersItemsWrapper = styled.div`
+  // display: flex;
+  // flex-wrap: nowrap;
+  // overflow-x: auto;
+  // scroll-behavior: smooth;
+  // scroll-snap-type: x mandatory;
+`;
+
 const ProductsOthersTitle = styled.div`
   font-weight: 900;
   font-size: 25px;
@@ -236,11 +246,11 @@ const ProductsOthersItems = styled.div`
   flex-wrap: nowrap;
 `;
 const ProductsOthersItem = styled.div`
-  width: 260px;
-  height: 600px;
+  wwidth: 260px;
   height: auto;
-  margin: 10px 10px;
+  margin: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  flex: 0 0 auto;
 `;
 const ProductsOthersItemImg = styled.img`
   width: 100%;
@@ -344,7 +354,13 @@ const Product = () => {
       setIsTransitioning(false);
     }, 500);
   };
-
+  const scrollToPosition = (position) => {
+    window.scrollTo({
+      top: position,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <div>
       <Navbar />
@@ -354,7 +370,7 @@ const Product = () => {
             <div className="row sm-gutter">
               <Link to="/products">
                 <BackProducts>
-                  <ReplyAllIcon fontSize="large" sx={{ fontSize: 30 }} />
+                  <ReplyAllIcon fontSize="large" sx={{ fontSize: 25 }} />
                 </BackProducts>
               </Link>
               <div className="col l-12">
@@ -469,36 +485,39 @@ const Product = () => {
               </div>
               <ProductsOthers>
                 <ProductsOthersTitle>Sản phẩm khác</ProductsOthersTitle>
-                <ProductsOthersItems>
-                  <div className="row sm-gutter">
-                    {products.map((product) => (
-                      <ProductsOthersItem>
-                        <Link
-                          to={`/product/${product._id}`}
-                          key={product._id}
-                          style={{ textDecoration: "none" }}
-                        >
-                          <ProductsOthersItemImg
-                            src={product.imgs[0]}
-                            alt={product.title}
-                          />
+                <ProductsOthersItemsWrapper>
+                  <ProductsOthersItems>
+                    <div className="row sm-gutter">
+                      {products.map((product) => (
+                        <ProductsOthersItem>
+                          <Link
+                            to={`/product/${product._id}`}
+                            key={product._id}
+                            style={{ textDecoration: "none" }}
+                            onClick={() => scrollToPosition(0)}
+                          >
+                            <ProductsOthersItemImg
+                              src={product.imgs[0]}
+                              alt={product.title}
+                            />
 
-                          <ProductsOthersItemText>
-                            <ProductsOthersItemTextHeader>
-                              {product.title}
-                            </ProductsOthersItemTextHeader>
-                            <ProductsOthersItemTextModel>
-                              Model : {product.model}
-                            </ProductsOthersItemTextModel>
-                            <ProductsOthersItemTextCode>
-                              Mã sp : {product.code}
-                            </ProductsOthersItemTextCode>
-                          </ProductsOthersItemText>
-                        </Link>
-                      </ProductsOthersItem>
-                    ))}
-                  </div>
-                </ProductsOthersItems>
+                            <ProductsOthersItemText>
+                              <ProductsOthersItemTextHeader>
+                                {product.title}
+                              </ProductsOthersItemTextHeader>
+                              <ProductsOthersItemTextModel>
+                                Model : {product.model}
+                              </ProductsOthersItemTextModel>
+                              <ProductsOthersItemTextCode>
+                                Mã sp : {product.code}
+                              </ProductsOthersItemTextCode>
+                            </ProductsOthersItemText>
+                          </Link>
+                        </ProductsOthersItem>
+                      ))}
+                    </div>
+                  </ProductsOthersItems>
+                </ProductsOthersItemsWrapper>
               </ProductsOthers>
             </div>
           </div>

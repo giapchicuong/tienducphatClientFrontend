@@ -21,22 +21,27 @@ const cartSlice = createSlice({
       }
 
       state.quantity += 1;
+      // Calculate total while adding the product
+      // state.total = state.products.reduce((a, i) => a + i.quantity * i.price, 0).toFixed(0);
     },
-    removeProduct: (state,action) => {
-      state.products.splice(
-        state.products.findIndex((item) => item._id === action.payload),
-        1
-        );
-      state.quantity -= 1;
-      // state.total = state.products.reduce((a,i) => a + (i.quantity ) * i.price,0).toFixed(0);
+    removeProduct: (state, action) => {
+      const index = state.products.findIndex((item) => item._id === action.payload);
+      if (index !== -1) {
+        // Update the quantity by subtracting the quantity of the removed product
+        state.quantity -= state.products[index].quantity;
+        // Use Immer's update function to remove the product at the given index
+        state.products.splice(index, 1);
+        // Calculate total while removing the product
+        // state.total = state.products.reduce((a, i) => a + i.quantity * i.price, 0).toFixed(0);
+      }
     },
     reset: (state, action) => {
       state.products = [];
       state.quantity = 0;
       // state.total = 0;
-    }
+    },
   },
 });
 
-export const { addProduct ,removeProduct,reset} = cartSlice.actions;
+export const { addProduct, removeProduct, reset } = cartSlice.actions;
 export default cartSlice.reducer;

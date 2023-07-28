@@ -35,8 +35,6 @@ export default function Products() {
   useEffect(() => {
     getProducts(cat, dispatch);
     setLoadingItems(true);
-    const timeout = setTimeout(() => {}, 1000);
-    return () => clearTimeout(timeout);
   }, [cat, dispatch]);
 
   useEffect(() => {
@@ -70,6 +68,11 @@ export default function Products() {
     indexOfLastProduct
   );
   const handlePageChange = (pageNumber) => {
+    window.scrollTo({
+      top: 300,
+      left: 0,
+      behavior: "smooth",
+    });
     setCurrentPage(pageNumber);
   };
 

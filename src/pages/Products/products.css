@@ -83,6 +83,7 @@
 
 .products-items {
   padding-left: 30px;
+  height: auto;
 }
 
 .products-item {
@@ -105,8 +106,9 @@
 .products-header {
   font-weight: 900;
   font-size: 14px;
-  line-height: 30px;
-  height: 30px;
+  line-height: 18px;
+  height: auto;
+  min-height: 66px;
   color: #000000;
   padding-left: 15px;
   text-transform: uppercase;
@@ -118,7 +120,6 @@
   font-size: 15px;
   color: darkred;
   padding: 10px 0;
-
 }
 .products-model {
   font-weight: 400;
