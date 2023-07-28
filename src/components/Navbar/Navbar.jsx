@@ -170,7 +170,7 @@ export default function Navbar() {
                     <NavItem
                       className={location.pathname === "/" ? "active" : ""}
                     >
-                      Home
+                      Trang Chủ
                     </NavItem>
                   </Link>
                   <Link to="/introduction" style={{ textDecoration: "none" }}>

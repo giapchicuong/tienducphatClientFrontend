@@ -5,9 +5,9 @@ import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import SliderHeader from "../../components/SliderHeader/SliderHeader";
-import advise1 from ".././../assets/images/service1.png";
-import advise2 from ".././../assets/images/service2.png";
-import advise3 from ".././../assets/images/service3.png";
+import advise1 from ".././../assets/images/serviceChanges.jpg";
+import advise2 from ".././../assets/images/serviceChanges1.jpg";
+import advise3 from ".././../assets/images/serviceChanges2.jpg";
 import advise4 from ".././../assets/images/service4.png";
 import News from "../../components/News/News";
 import productintro from ".././../assets/images/product-intro.png";
@@ -42,7 +42,7 @@ export default function Service() {
             <div className="ServicePagesquare hide-on-mobile"></div>
             <div className="ServicePageintro-header col c-12">Quy Trình</div>
             <div className="ServicePageintro-title">
-              Quá trình chúng tôi làm việc Với khách hàng của chúng tôi trên
+              Quá trình làm việc Với khách hàng của chúng tôi trên
               toàn Việt Nam
             </div>
             <div className="ServicePageintro-des">
