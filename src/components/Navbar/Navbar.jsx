@@ -40,7 +40,7 @@ export default function Navbar() {
 
   const ChildMenu = styled.div`
     position: absolute;
-    top: 3.3vw  ;
+    top: 3.25vw  ;
     left: 0;
     width: 200px;
     background-color: #fff;
