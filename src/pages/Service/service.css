@@ -324,12 +324,17 @@
   .ServicePageadvise-item {
     padding: 50px 0;
   }
-  .ServicePageadvise-left {
-    /* margin-right: 1px; */
+  .ServicePageadvise-left > .ServicePageadvise-header{
+    margin-left: 0;
   }
-  
+  .ServicePageadvise-left > .ServicePageadvise-title{
+    margin-left: 0;
+  }
+  .ServicePageadvise-left > .ServicePageadvise-des{
+    margin-left: 0;
+  }
   .ServicePageadvise-right {
-    /* margin-left: 1px; */
+    padding-left: 10px;
   
   }
   
@@ -339,6 +344,7 @@
     line-height: 36px;
     color: #000000;
     opacity: 0.87;
+    margin-left: 20px;
     padding: 15px 0;
   }
   
@@ -346,6 +352,8 @@
     font-weight: 600;
     font-size: 36px;
     line-height: 54px;
+    margin-left: 20px;
+
     color: #232536;
     padding: 15px 0;
   }
@@ -353,14 +361,16 @@
   .ServicePageadvise-des {
     font-weight: 400;
     font-size: 16px;
+    margin-left: 20px;
     line-height: 24px;
     color: #232536;
     opacity: 0.6;
     padding: 15px 0;
   }
   .ServicePageadvise-img > img {
-    width: 100%;
+    width: 595px;
     height: 523px;
+    margin-top: -50px;
     object-fit: contain;
   }
   /* Table và moblie */
