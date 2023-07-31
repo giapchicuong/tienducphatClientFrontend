@@ -2,6 +2,7 @@ import React from "react";
 import "./number.css";
 import "../../assets/css/grid.css";
 import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
+import { Link } from "react-router-dom";
 export default function Number() {
   const LineSmall = {
     width: "15%",
@@ -47,10 +48,12 @@ export default function Number() {
             <div class="number-item-title">Giải thưởng</div>
           </div>
           <div class="number-item col l-2">
+          <Link to="/service" style={{ textDecoration: "none" }}> 
             <div class="number-item-more">
               Xem thêm
               <DoubleArrowIcon fontSize="large" sx={{ fontSize: 30 }} />
             </div>
+          </Link>
           </div>
         </div>
       </div>

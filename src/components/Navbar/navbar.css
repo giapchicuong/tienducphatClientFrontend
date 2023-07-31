@@ -176,6 +176,28 @@ header {
 .nav__bars-btn:hover {
   color: #159eec;
 }
+.activeMobile {
+  color: #bfd2f8 !important;
+  font-weight: 900 !important;
+}
+.nav-button-mobile {
+  text-align: center;
+  padding-top: 10px;
+}
+.nav-button-mobile > button {
+  background: #bfd2f8;
+  border-radius: 50px;
+  border: none;
+  padding: 13px 50px;
+  font-size: 16px;
+  color: #1f2b6c;
+  transition: 0.5s;
+}
+.nav-button-mobile > button:hover {
+  background-color: #159eec;
+  color: black;
+}
+
 .nav__mobile {
   position: fixed;
   top: 0;

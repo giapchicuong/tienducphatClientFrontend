@@ -35,12 +35,11 @@ export default function Navbar() {
   `;
   const ParentMenuItem = styled.div`
     position: relative;
-
   `;
 
   const ChildMenu = styled.div`
     position: absolute;
-    top: 3.25vw  ;
+    top: 3.25vw;
     left: 0;
     width: 200px;
     background-color: #fff;
@@ -172,27 +171,70 @@ export default function Navbar() {
                   <CloseIcon style={{ fontSize: "30px" }} />
                 </label>
                 <div class="nav__mobile-list">
-                  <Link
-                    to="/introduction"
-                    style={{
-                      textDecoration: "none",
-                    }}
-                  >
-                    <div className="nav__mobile-link">Giới Thiệu</div>
+                  {/* <Link to="/" style={{ textDecoration: "none" }}>
+                    <div
+                      className={`nav__mobile-link ${
+                        location.pathname === "/"
+                          ? "activeMobile"
+                          : ""
+                      }`}
+                    >
+                      Trang chủ
+                    </div>
+                  </Link> */}
+                  <Link to="/introduction" style={{ textDecoration: "none" }}>
+                    <div
+                      className={`nav__mobile-link ${
+                        location.pathname === "/introduction"
+                          ? "activeMobile"
+                          : ""
+                      }`}
+                    >
+                      Giới Thiệu
+                    </div>
                   </Link>
                   <Link to="/service" style={{ textDecoration: "none" }}>
-                    <div className="nav__mobile-link">Dịch Vụ</div>
+                    <div
+                      className={`nav__mobile-link ${
+                        location.pathname === "/service" ? "activeMobile" : ""
+                      }`}
+                    >
+                      Dịch Vụ
+                    </div>
                   </Link>
                   <Link to="/products" style={{ textDecoration: "none" }}>
-                    <div className="nav__mobile-link">Sản Phẩm</div>
+                    <div
+                      className={`nav__mobile-link ${
+                        location.pathname === "/products" ? "activeMobile" : ""
+                      }`}
+                    >
+                      Sản Phẩm
+                    </div>
                   </Link>
                   <Link to="/news" style={{ textDecoration: "none" }}>
-                    <div className="nav__mobile-link">Tin Tức</div>
+                    <div
+                      className={`nav__mobile-link ${
+                        location.pathname === "/news" ? "activeMobile" : ""
+                      }`}
+                    >
+                      Tin Tức
+                    </div>
                   </Link>
                   <Link to="/contact" style={{ textDecoration: "none" }}>
-                    <div className="nav__mobile-link">Liên hệ</div>
+                    <div
+                      className={`nav__mobile-link ${
+                        location.pathname === "/contact" ? "activeMobile" : ""
+                      }`}
+                    >
+                      Liên hệ
+                    </div>
                   </Link>
                 </div>
+                <Link to="/contact" style={{ textDecoration: "none" }}>
+                  <div className="nav-button-mobile">
+                    <button>Nhận Tư Vấn</button>
+                  </div>
+                </Link>
               </nav>
             </div>
           </div>
@@ -234,7 +276,11 @@ export default function Navbar() {
                     <Link to="/products" style={{ textDecoration: "none" }}>
                       <NavItem
                         className={
-                          location.pathname === "/products" ? "active" : ""
+                          location.pathname.includes("/products")
+                            ? "active"
+                            : "" || location.pathname.includes("/product")
+                            ? "active"
+                            : ""
                         }
                       >
                         Sản Phẩm
@@ -281,9 +327,11 @@ export default function Navbar() {
                       </MenuItem>
                     </Link>
                   </div>
-                  <div className="nav-button">
-                    <button>Nhận Tư Vấn</button>
-                  </div>
+                  <Link to="/contact" style={{ textDecoration: "none" }}>
+                    <div className="nav-button">
+                      <button>Nhận Tư Vấn</button>
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>

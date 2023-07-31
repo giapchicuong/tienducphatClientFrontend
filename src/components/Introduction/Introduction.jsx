@@ -4,6 +4,7 @@ import Donaldson from "../../assets/images/Donaldson-Products-scaled 1 (1).png";
 import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 import styled from "styled-components";
 import { mobile } from "../../responsive";
+import { Link } from "react-router-dom";
 export default function Introduction() {
   const Introduction = styled.div`
     text-align: center;
@@ -98,10 +99,12 @@ export default function Introduction() {
           chính thức của Donaldson tại miền nam Việt Nam về các sản phẩm máy sấy
           khí, thiết bị lọc khí và thiết bị lọc chất lỏng.
         </IntroductionDes>
+        <Link to="/introduction" style={{ textDecoration: "none" }}>
         <IntroductionMore>
           Đọc Thêm ---
           <DoubleArrowIcon fontSize="large" />
         </IntroductionMore>
+        </Link>
         <IntroductionDivImg>
           <IntroductionImg src={Donaldson} alt="Donaldson"></IntroductionImg>
         </IntroductionDivImg>
