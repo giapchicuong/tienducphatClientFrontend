@@ -19,6 +19,12 @@ import {
   getProductFailure,
   getProductStart,
   getProductSuccess,
+  increaseRatingCountFailure,
+  increaseRatingCountStart,
+  increaseRatingCountSuccess,
+  increaseViewCountFailure,
+  increaseViewCountStart,
+  increaseViewCountSuccess,
 } from "./productRedux";
 import { getNewFailure, getNewStart, getNewSuccess } from "./newRedux";
 import {
@@ -105,5 +111,31 @@ export const addMessage = async (message, dispatch) => {
   } catch (err) {
     dispatch(addMessageFailure());
     toast.error("Gửi tin nhắn thất bại, hãy thử lại."); // Show success notification
+  }
+};
+
+export const increaseViewCount = (productId) => async (dispatch) => {
+  dispatch(increaseViewCountStart());
+  try {
+    // Gọi API để tăng lượt xem cho sản phẩm
+    const res = await publicRequest.post(`/product/${productId}`);
+    const { viewCount } = res.data;
+    dispatch(increaseViewCountSuccess({ productId, viewCount }));
+  } catch (err) {
+    dispatch(increaseViewCountFailure());
+    toast.error("Lỗi tăng lượt xem."); // Show error notification
+  }
+};
+
+export const increaseRatingCount = (productId) => async (dispatch) => {
+  dispatch(increaseRatingCountStart());
+  try {
+    // Gọi API để tăng lượt đánh giá cho sản phẩm
+    const res = await publicRequest.post(`/product/${productId}`);
+    const { ratingCount } = res.data;
+    dispatch(increaseRatingCountSuccess({ productId, ratingCount }));
+  } catch (err) {
+    dispatch(increaseRatingCountFailure());
+    toast.error("Lỗi tăng lượt đánh giá."); // Show error notification
   }
 };

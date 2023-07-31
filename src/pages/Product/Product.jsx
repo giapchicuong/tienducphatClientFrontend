@@ -11,7 +11,11 @@ import { useDispatch, useSelector } from "react-redux";
 import ReplyAllIcon from "@mui/icons-material/ReplyAll";
 import Skeleton from "@mui/material/Skeleton";
 import Box from "@mui/material/Box";
-import { getProducts } from "../../redux/apiCalls";
+import {
+  getProducts,
+  increaseRatingCount,
+  increaseViewCount,
+} from "../../redux/apiCalls";
 import { mobile } from "../../responsive";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import Rating from "@mui/material/Rating";
@@ -369,9 +373,22 @@ const Product = () => {
       behavior: "smooth",
     });
   };
+  const viewCount = useSelector((state) => state.product.viewCount);
+  const ratingCount = useSelector((state) => state.product.ratingCount);
 
+  // Hàm thực hiện tăng lượt xem của sản phẩm
+  const handleIncreaseViewCount = (productId) => {
+    dispatch(increaseViewCount(productId));
+  };
+
+  // Hàm thực hiện tăng lượt đánh giá của sản phẩm
+  const handleIncreaseRatingCount = (productId) => {
+    dispatch(increaseRatingCount(productId));
+  };
+
+  
   return (
-    <div style={{overflowX:"hidden",overflowY:"hidden"}}>
+    <div style={{ overflowX: "hidden", overflowY: "hidden" }}>
       <Navbar />
       {loading ? (
         <Container>
@@ -441,15 +458,20 @@ const Product = () => {
                             fontSize="large"
                             style={{ color: "#e4e4e4" }}
                           />
-                          <ProductRateText>Lượt xem : 123 </ProductRateText>
+                          <ProductRateText>
+                            Lượt xem : {viewCount}{" "}
+                          </ProductRateText>
                           <Stack spacing={1}>
                             <Rating
                               name="full-rating"
                               defaultValue={5}
                               precision={1}
+                              onChange={handleIncreaseRatingCount}
                             />
                           </Stack>
-                          <ProductRateText>(28 đánh giá)</ProductRateText>
+                          <ProductRateText>
+                            ({ratingCount} đánh giá)
+                          </ProductRateText>
                         </ProductRating>
                         <ProductModel>
                           Mã SP : <ProductLabel>{product.model}</ProductLabel>

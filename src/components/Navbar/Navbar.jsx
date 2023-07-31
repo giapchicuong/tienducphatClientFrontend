@@ -1,4 +1,4 @@
-import React, { Window } from "react";
+import React, { useState, Window } from "react";
 import "./navbar.css";
 import "../../assets/css/grid.css";
 import logo from "../../assets/images/logo4.png";
@@ -33,6 +33,41 @@ export default function Navbar() {
       font-weight: 900;
     }
   `;
+  const ParentMenuItem = styled.div`
+    position: relative;
+
+  `;
+
+  const ChildMenu = styled.div`
+    position: absolute;
+    top: 3.3vw  ;
+    left: 0;
+    width: 200px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: ${({ open }) => (open ? "block" : "none")};
+  `;
+
+  const ChildMenuItem = styled.div`
+    padding: 12px 20px;
+    color: #1d4499;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 21px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    transition: transform 0.3s ease; 
+    &:hover {
+      background-color: #f5f5f5;
+      color:#000000;
+      transform: translateY(5px); 
+
+    &:last-child {
+      border-bottom: none;
+    }
+  `;
+  const [isChildMenuOpen, setIsChildMenuOpen] = useState(false);
 
   const quantity = useSelector((state) => state.cart.quantity);
   const openZaloAndSearch = () => {
@@ -48,6 +83,7 @@ export default function Navbar() {
     window.location.href = "tel:" + phoneNumber;
   };
   const location = useLocation();
+  const categories = useSelector((state) => state.category.categories);
 
   return (
     <header>
@@ -191,15 +227,31 @@ export default function Navbar() {
                       Dịch Vụ
                     </NavItem>
                   </Link>
-                  <Link to="/products" style={{ textDecoration: "none" }}>
-                    <NavItem
-                      className={
-                        location.pathname === "/products" ? "active" : ""
-                      }
-                    >
-                      Sản Phẩm
-                    </NavItem>
-                  </Link>
+                  <ParentMenuItem
+                    onMouseEnter={() => setIsChildMenuOpen(true)}
+                    onMouseLeave={() => setIsChildMenuOpen(false)}
+                  >
+                    <Link to="/products" style={{ textDecoration: "none" }}>
+                      <NavItem
+                        className={
+                          location.pathname === "/products" ? "active" : ""
+                        }
+                      >
+                        Sản Phẩm
+                      </NavItem>
+                    </Link>
+                    <ChildMenu open={isChildMenuOpen}>
+                      {categories.map((category) => (
+                        <Link
+                          to={`/products/${category.cat}`}
+                          key={category._id}
+                          style={{ textDecoration: "none" }}
+                        >
+                          <ChildMenuItem>{category.title}</ChildMenuItem>
+                        </Link>
+                      ))}
+                    </ChildMenu>
+                  </ParentMenuItem>
                   <Link to="/news" style={{ textDecoration: "none" }}>
                     <NavItem
                       className={location.pathname === "/news" ? "active" : ""}

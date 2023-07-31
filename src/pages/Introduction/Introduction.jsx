@@ -41,9 +41,9 @@ export default function Introduction() {
     width: "15%",
   };
   return (
-    <section style={{overflowX:"hidden",overflowY:"hidden"}} >
+    <section style={{ overflowX: "hidden", overflowY: "hidden" }}>
       <Navbar />
-      <SliderHeader title="Giới Thiệu"/>
+      <SliderHeader title="Giới Thiệu" />
       <div class="IntroPageintro">
         <div class="grid wide">
           <div class="row sm-gutter">
@@ -320,15 +320,15 @@ export default function Introduction() {
                   <div class="IntroPageproduct-item__img">
                     <img src={thietbixulykhinen7} alt="" />
                   </div>
-                  <div class="IntroPageproduct-item_title">
-                    Lọc nước, bia rượu, nước giải khát....vv
+                  <div class="IntroPageproduct-item_title" style={{marginTop:"-90px"}}>
+                    Lọc nước, bia rượu, nước giải khát
                   </div>
                 </div>
                 <div class="IntroPageproduct-item col c-4">
                   <div class="IntroPageproduct-item__img">
                     <img src={thietbixulykhinen8} alt="" />
                   </div>
-                  <div class="IntroPageproduct-item_title">
+                  <div class="IntroPageproduct-item_title" style={{marginTop:"-90px"}}>
                     Lọc khí nén (bụi, hạt dầu)
                   </div>
                 </div>
@@ -336,36 +336,22 @@ export default function Introduction() {
                   <div class="IntroPageproduct-item__img">
                     <img src={thietbixulykhinen9} alt="" />
                   </div>
-                  <div class="IntroPageproduct-item_title">
-                    Lọc mùi dầu trong khí nén
-                  </div>
-                  <div class="IntroPageproduct-item_des IntroPagegeneral-des">
-                    Để loại bỏ bụi, vi khuẩn, dầu, nước đáp ứng các tiêu chuẩn
-                    khí nén ISO 8573.1-2001
-                  </div>
+                  <div class="IntroPageproduct-item_title" style={{marginTop:"-90px"}}>Lọc hơi</div>
                 </div>
                 <div class="IntroPageproduct-item col c-4">
                   <div class="IntroPageproduct-item__img">
                     <img src={thietbixulykhinen10} alt="" />
                   </div>
-                  <div class="IntroPageproduct-item_title">
-                    Lọc khí tiệt trùng trong ngành thực phẩm công nghiêp
-                  </div>
-                  <div class="IntroPageproduct-item_des IntroPagegeneral-des">
-                    Để loại bỏ bụi, vi khuẩn, dầu, nước đáp ứng các tiêu chuẩn
-                    khí nén ISO 8573.1-2001
+                  <div class="IntroPageproduct-item_title" style={{marginTop:"-90px"}}>
+                    Lọc khí tiệt trùng
                   </div>
                 </div>
                 <div class="IntroPageproduct-item col c-4">
                   <div class="IntroPageproduct-item__img">
                     <img src={thietbixulykhinen11} alt="" />
                   </div>
-                  <div class="IntroPageproduct-item_title">
+                  <div class="IntroPageproduct-item_title" style={{marginTop:"-90px"}}>
                     Lọc bụi công nghiệp
-                  </div>
-                  <div class="IntroPageproduct-item_des IntroPagegeneral-des">
-                    Để loại bỏ bụi, vi khuẩn, dầu, nước đáp ứng các tiêu chuẩn
-                    khí nén ISO 8573.1-2001
                   </div>
                 </div>
               </div>
@@ -428,7 +414,7 @@ export default function Introduction() {
             <div class="IntroPagecommitment-des">
               <div className="IntroPagecommitment-des_item">
                 <div className="IntroPagecommitment-des_item_icon">
-                <img src={iconService} alt="" />
+                  <img src={iconService} alt="" />
                 </div>
                 <p>
                   {" "}
@@ -437,8 +423,8 @@ export default function Introduction() {
                 </p>
               </div>
               <div className="IntroPagecommitment-des_item">
-              <div className="IntroPagecommitment-des_item_icon">
-                <img src={iconService} alt="" />
+                <div className="IntroPagecommitment-des_item_icon">
+                  <img src={iconService} alt="" />
                 </div>
                 <p>
                   Cung cấp thi công các dự án đảm bảo chất lượng phù hợp với
@@ -446,8 +432,8 @@ export default function Introduction() {
                 </p>
               </div>
               <div className="IntroPagecommitment-des_item">
-              <div className="IntroPagecommitment-des_item_icon">
-                <img src={iconService} alt="" />
+                <div className="IntroPagecommitment-des_item_icon">
+                  <img src={iconService} alt="" />
                 </div>
                 <p>
                   Thực hiện chính xác các nhu cầu về chất lượng nhằm thỏa mãn
@@ -455,8 +441,8 @@ export default function Introduction() {
                 </p>
               </div>
               <div className="IntroPagecommitment-des_item">
-              <div className="IntroPagecommitment-des_item_icon">
-                <img src={iconService} alt="" />
+                <div className="IntroPagecommitment-des_item_icon">
+                  <img src={iconService} alt="" />
                 </div>
                 <p>
                   Không ngừng nâng cao kiến thức trình độ cho cán bộ công nhân
@@ -465,8 +451,8 @@ export default function Introduction() {
                 </p>
               </div>
               <div className="IntroPagecommitment-des_item">
-              <div className="IntroPagecommitment-des_item_icon">
-                <img src={iconService} alt="" />
+                <div className="IntroPagecommitment-des_item_icon">
+                  <img src={iconService} alt="" />
                 </div>
                 <p>
                   Phát huy nguồn lực, mở rộng đầu tư, áp dụng đối mới công nghệ
@@ -474,8 +460,8 @@ export default function Introduction() {
                 </p>
               </div>
               <div className="IntroPagecommitment-des_item">
-              <div className="IntroPagecommitment-des_item_icon">
-                <img src={iconService} alt="" />
+                <div className="IntroPagecommitment-des_item_icon">
+                  <img src={iconService} alt="" />
                 </div>
                 <p>
                   Tất cả các cán bộ nhân viên đều được phố biến và nắm rõ về
