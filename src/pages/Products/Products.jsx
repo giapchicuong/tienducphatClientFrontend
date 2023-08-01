@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import "./products.css";
 import "../../assets/css/grid.css";
 import Navbar from "../../components/Navbar/Navbar";
@@ -28,13 +28,15 @@ export default function Products() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.product.products);
   const categories = useSelector((state) => state.category.categories);
-  // useEffect(() => {
-  //   getCategories(dispatch);
-  // }, [dispatch]);
 
   useEffect(() => {
     getProducts(cat, dispatch);
-    setLoadingItems(true);
+    setCurrentPage(1);
+    setLoadingItems(false);
+    const timer = setTimeout(() => {
+      setLoadingItems(true);
+    }, 1000);
+    return () => clearTimeout(timer);
   }, [cat, dispatch]);
 
   useEffect(() => {
@@ -53,8 +55,8 @@ export default function Products() {
     setSelectedOption(selectedValue);
     history.push(selectedValue);
   };
+  const productsPerPage = 6;
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 6; // Số lượng sản phẩm hiển thị trên mỗi trang
   const totalPages = Math.ceil(products.length / productsPerPage);
   const pageNumbers = [];
 
@@ -63,9 +65,9 @@ export default function Products() {
   }
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = products.slice(
-    indexOfFirstProduct,
-    indexOfLastProduct
+  const currentProducts = useMemo(
+    () => products.slice(indexOfFirstProduct, indexOfLastProduct),
+    [currentPage, products]
   );
   const handlePageChange = (pageNumber) => {
     window.scrollTo({
@@ -74,10 +76,15 @@ export default function Products() {
       behavior: "smooth",
     });
     setCurrentPage(pageNumber);
+    setLoadingItems(false);
+    const timer = setTimeout(() => {
+      setLoadingItems(true);
+    }, 500);
+    return () => clearTimeout(timer);
   };
 
   return (
-    <section style={{overflowX:"hidden",overflowY:"hidden"}}>
+    <section style={{ overflowX: "hidden", overflowY: "hidden" }}>
       <Navbar />
       <SliderHeader title="Sản Phẩm" />
       <section>

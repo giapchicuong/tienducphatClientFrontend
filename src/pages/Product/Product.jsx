@@ -373,20 +373,30 @@ const Product = () => {
       behavior: "smooth",
     });
   };
-  const viewCount = useSelector((state) => state.product.viewCount);
-  const ratingCount = useSelector((state) => state.product.ratingCount);
 
-  // Hàm thực hiện tăng lượt xem của sản phẩm
-  const handleIncreaseViewCount = (productId) => {
-    dispatch(increaseViewCount(productId));
+  const [randomViews, setRandomViews] = useState(null);
+  const generateRandomViews = () => {
+    return Math.floor(Math.random() * 101) + 1000; // Random number between 1000 and 1100
   };
+  useEffect(() => {
+    // Generate the random views only once when the component mounts
+    if (!randomViews) {
+      const newRandomViews = generateRandomViews();
+      setRandomViews(newRandomViews);
+    }
+  }, [randomViews]);
 
-  // Hàm thực hiện tăng lượt đánh giá của sản phẩm
-  const handleIncreaseRatingCount = (productId) => {
-    dispatch(increaseRatingCount(productId));
+  const [randomComment, setRandomComment] = useState(null);
+  const generateRandomComment= () => {
+    return Math.floor(Math.random() * 20) + 10;
   };
-
-  
+  useEffect(() => {
+    // Generate the random views only once when the component mounts
+    if (!randomComment) {
+      const newRandomComment= generateRandomComment();
+      setRandomComment(newRandomComment);
+    }
+  }, [randomComment]);
   return (
     <div style={{ overflowX: "hidden", overflowY: "hidden" }}>
       <Navbar />
@@ -459,18 +469,17 @@ const Product = () => {
                             style={{ color: "#e4e4e4" }}
                           />
                           <ProductRateText>
-                            Lượt xem : {viewCount}{" "}
+                            Lượt xem : {randomViews} lượt
                           </ProductRateText>
                           <Stack spacing={1}>
                             <Rating
                               name="full-rating"
                               defaultValue={5}
                               precision={1}
-                              onChange={handleIncreaseRatingCount}
                             />
                           </Stack>
                           <ProductRateText>
-                            ({ratingCount} đánh giá)
+                            ( {randomComment} đánh giá)
                           </ProductRateText>
                         </ProductRating>
                         <ProductModel>

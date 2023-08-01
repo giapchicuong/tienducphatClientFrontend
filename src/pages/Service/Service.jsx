@@ -236,11 +236,10 @@ export default function Service() {
                     <img src={productintro} alt="" />
                   </div>
                   <div class="IntroPageproduct-item_title">
-                    Các bộ lọc khí nén
+                  Bộ lọc khí nén
                   </div>
                   <div class="IntroPageproduct-item_des IntroPagegeneral-des">
-                    Để loại bỏ bụi, vi khuẩn, dầu, nước đáp ứng các tiêu chuẩn
-                    khí nén ISO 8573.1-2001
+                  Loại bỏ bụi, vi khuẩn, dầu, nước đáp ứng tiêu chuẩn ISO 8573-1 : 2001
                   </div>
                 </div>
                 <div class="IntroPageproduct-item col c-6 l-4">
@@ -248,12 +247,10 @@ export default function Service() {
                     <img src={thietbixulykhinen2} alt="" />
                   </div>
                   <div class="IntroPageproduct-item_title">
-                    Máy làm khô khí nén (Air Dryers)
+                  Máy sấy khí nén
                   </div>
                   <div class="IntroPageproduct-item_des IntroPagegeneral-des">
-                    bao gồm máy sấy khí dạng làm lạnh và máy sấy khí dạng hấp
-                    thụ: Để loại bỏ nước với độ khô lên tới: PDP -70 ºC, với chế
-                    độ tiết kiệm năng lượng.
+                  Loại bỏ nước với độ khô lên tới  PDP -70 ºC, chế độ tiết kiệm năng lượng.
                   </div>
                 </div>
                 <div class="IntroPageproduct-item col c-6 l-4">
@@ -262,7 +259,7 @@ export default function Service() {
                   </div>
                   <div class="IntroPageproduct-item_title">Bộ tách nước</div>
                   <div class="IntroPageproduct-item_des IntroPagegeneral-des">
-                    Để tách xả nước và dầu dạng lỏng ra khỏi hệ thống khí nén.
+                  Tách xả nước và dầu dạng lỏng ra khỏi hệ thống khí nén.
                   </div>
                 </div>
                 <div class="IntroPageproduct-item col c-6 l-4">
@@ -270,10 +267,10 @@ export default function Service() {
                     <img src={thietbixulykhinen4} alt="" />
                   </div>
                   <div class="IntroPageproduct-item_title">
-                    Thiết bị xả nước tự động
+                  Thiết bị xả nước tự động
                   </div>
                   <div class="IntroPageproduct-item_des IntroPagegeneral-des">
-                    Để tách xả nước và dầu dạng lỏng ra khỏi hệ thống khí nén.
+                  Để tách xả nước và dầu dạng lỏng ra khỏi hệ thống khí nén.
                   </div>
                 </div>
                 <div class="IntroPageproduct-item col c-6 l-4">
@@ -284,8 +281,7 @@ export default function Service() {
                     Máy sản xuất khí
                   </div>
                   <div class="IntroPageproduct-item_des IntroPagegeneral-des">
-                    Máy sản xuất khí Nitơ, khí Hydro, máy tạo khí chuẩn cho
-                    phòng thí nghiệm.
+                  Máy sản xuất khí Nitơ, khí Hydro, máy tạo khí chuẩn cho phòng thí nghiệm.
                   </div>
                 </div>
                 <div class="IntroPageproduct-item col c-6 l-4">
@@ -312,8 +308,9 @@ export default function Service() {
                     <img src={thietbixulykhinen7} alt="" />
                   </div>
                   <div class="IntroPageproduct-item_title">
-                    Lọc nước, bia rượu, nước giải khát....vv
+                  Lọc nước, bia rượu, nước giải khát
                   </div>
+                  
                 </div>
                 <div class="IntroPageproduct-item col c-6 l-4">
                   <div class="IntroPageproduct-item__img">
@@ -328,11 +325,7 @@ export default function Service() {
                     <img src={thietbixulykhinen9} alt="" />
                   </div>
                   <div class="IntroPageproduct-item_title">
-                  Lọc mùi dầu trong khí nén
-                  </div>
-                  <div class="IntroPageproduct-item_des IntroPagegeneral-des">
-                    Để loại bỏ bụi, vi khuẩn, dầu, nước đáp ứng các tiêu chuẩn
-                    khí nén ISO 8573.1-2001
+                  Lọc hơi
                   </div>
                 </div>
                 <div class="IntroPageproduct-item col c-6 l-4">
@@ -340,11 +333,7 @@ export default function Service() {
                     <img src={thietbixulykhinen10} alt="" />
                   </div>
                   <div class="IntroPageproduct-item_title">
-                  Lọc khí tiệt trùng trong ngành thực phẩm công nghiêp
-                  </div>
-                  <div class="IntroPageproduct-item_des IntroPagegeneral-des">
-                    Để loại bỏ bụi, vi khuẩn, dầu, nước đáp ứng các tiêu chuẩn
-                    khí nén ISO 8573.1-2001
+                  Lọc khí tiệt trùng
                   </div>
                 </div>
                 <div class="IntroPageproduct-item col c-6 l-4">
@@ -354,10 +343,10 @@ export default function Service() {
                   <div class="IntroPageproduct-item_title">
                   Lọc bụi công nghiệp
                   </div>
-                  <div class="IntroPageproduct-item_des IntroPagegeneral-des">
+                  {/* <div class="IntroPageproduct-item_des IntroPagegeneral-des">
                     Để loại bỏ bụi, vi khuẩn, dầu, nước đáp ứng các tiêu chuẩn
                     khí nén ISO 8573.1-2001
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

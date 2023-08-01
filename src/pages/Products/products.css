@@ -1,6 +1,7 @@
 .products {
   padding: 50px 0;
-  height: 100%;
+  height: auto;
+  min-height: 100vh;
 }
 .products-left_mobile {
   padding-bottom: 100px;

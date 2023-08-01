@@ -116,9 +116,7 @@ export default function News() {
                 <NewsItemTitle>chế tạo</NewsItemTitle>
                 <NewsItemDes>
                   {" "}
-                  Hệ thống khí nén đáng tin cậy và tiết kiệm năng lượng, được
-                  thiết kế nhằm giảm chi phí vận hành và tác động môi trường cho
-                  các khách hàng trong ngành chế tạo của chúng tôi.
+                  Hệ thống khí nén đáng tin cậy và tiết kiệm năng lượng, được thiết kế nhằm giảm chi phí vận hành và tác động môi trường cho các khách hàng trong ngành chế tạo của chúng tôi.
                 </NewsItemDes>
               </NewsItemText>
             </NewsItem>
@@ -129,13 +127,10 @@ export default function News() {
                 <NewsItemImg src={new1} alt="news"></NewsItemImg>
               </NewsItemImgDiv>
               <NewsItemText>
-                <NewsItemTitle>dệt</NewsItemTitle>
+                <NewsItemTitle>dệt may</NewsItemTitle>
                 <NewsItemDes>
                   {" "}
-                  Cung cấp máy nén khí để chạy nhiều loại thiết bị và công cụ
-                  tiện ích trong các quy trình dệt khác nhau và máy nén khí của
-                  chúng tôi sẽ đóng một vai trò quan trọng trong việc duy trì
-                  chất lượng và hiệu quả của quy trình tổng thể.
+                  Cung cấp máy nén khí để chạy nhiều loại thiết bị và công cụ tiện ích trong các quy trình dệt khác nhau, vai trò quan trọng trong việc duy trì chất lượng và hiệu quả của quy trình tổng thể.
                 </NewsItemDes>
               </NewsItemText>
             </NewsItem>
@@ -149,10 +144,7 @@ export default function News() {
                 <NewsItemTitle>khai mỏ</NewsItemTitle>
                 <NewsItemDes>
                   {" "}
-                  Máy nén khí cải tiến của chúng tôi được sử dụng an toàn và
-                  hiệu quả trong các mỏ và giàn khoan dầu để cung cấp năng lượng
-                  cho thiết bị khoan và đóng cọc, công cụ khí nén, băng tải vận
-                  chuyển vật liệu và hệ thống thông gió bên trong mỏ.
+                  Công nghệ cải tiến từ máy nén khí cung cấp năng lượng cho thiết bị khoan và đóng cọc, công cụ khí nén, băng tải vận chuyển vật liệu và hệ thống thông gió bên trong mỏ.
                 </NewsItemDes>
               </NewsItemText>
             </NewsItem>
@@ -166,10 +158,7 @@ export default function News() {
                 <NewsItemTitle>thực phẩm & đồ uống </NewsItemTitle>
                 <NewsItemDes>
                   {" "}
-                  Các ứng dụng Thực phẩm & Đồ uống (F&B) có phạm vi rất rộng -
-                  từ đóng chai đồ uống đến vắt sữa bò. Điểm chung của các ứng
-                  dụng này là đều cần loại khí không dầu để đảm bảo chất lượng
-                  sản phẩm cao.
+                  Khí nén không dầu được sử dụng phổ biến trong ngành F&B góp phần đẩy nhanh quy trình sản xuất, đóng gói và làm sạch, cải thiện hiệu suất và đảm bảo môi trường sản xuất sạch sẽ.
                 </NewsItemDes>
               </NewsItemText>
             </NewsItem>
@@ -183,8 +172,7 @@ export default function News() {
                 <NewsItemTitle>ô tô</NewsItemTitle>
                 <NewsItemDes>
                   {" "}
-                  cung cấp chủ yếu cho ba phân khúc; garage, linh kiện và hãng
-                  sản xuất xe,...
+                  Khí nén được dùng cho các ứng dụng hổi sạch bụi và mảnh vụn, cung cấp năng lượng cho các công cụ điều khiển và sơn, tháo lắp và bơm lốp xe, góp phần tăng hiệu suất sản xuất,
                 </NewsItemDes>
               </NewsItemText>
             </NewsItem>
@@ -198,10 +186,7 @@ export default function News() {
                 <NewsItemTitle>hóa chất</NewsItemTitle>
                 <NewsItemDes>
                   {" "}
-                  Máy nén khí trong ngành hóa chất có rất nhiều ứng dụng. Thường
-                  được sử dụng trong ngành hóa chất để xử lý không khí, lưu
-                  thông không khí, xử lý vật liệu, sấy khô sản phẩm, tạo khí
-                  nitơ, van điều khiển và xi lanh.
+                  Khí nén thường được sử dụng trong ngành hóa chất để xử lý không khí, lưu thông không khí, xử lý vật liệu, sấy khô sản phẩm, tạo khí nitơ, van điều khiển và xi lanh.
                 </NewsItemDes>
               </NewsItemText>
             </NewsItem>
