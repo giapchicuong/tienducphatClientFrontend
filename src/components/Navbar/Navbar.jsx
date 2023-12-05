@@ -39,7 +39,7 @@ export default function Navbar() {
 
   const ChildMenu = styled.div`
     position: absolute;
-    top: 3.25vw;
+    top: 2.9vw;
     left: 0;
     width: 200px;
     background-color: #fff;
@@ -56,12 +56,12 @@ export default function Navbar() {
     line-height: 21px;
     transition: background-color 0.3s ease;
     cursor: pointer;
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease;
     &:hover {
       background-color: #f5f5f5;
-      color:#000000;
-      transform: translateY(5px); 
-
+      color: #000000;
+      transform: translateY(5px);
+    }
     &:last-child {
       border-bottom: none;
     }

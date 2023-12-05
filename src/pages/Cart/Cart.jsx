@@ -179,7 +179,7 @@ const Cart = () => {
       products: cart.products.map((item) => ({
         productId: item._id,
         productName: item.title,
-        productImg: item.img,
+        productImg: item.imgs[0],
         quantity: item.quantity,
       })),
     };
