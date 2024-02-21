@@ -16,6 +16,7 @@ import Box from "@mui/material/Box";
 import { publicRequest } from "../../requestMethods";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategories, getProducts } from "../../redux/apiCalls";
+import slugify from "slugify";
 export default function Products() {
   const ArrowIconStyle = styled.div`
   color: "#000000",
@@ -81,6 +82,15 @@ export default function Products() {
       setLoadingItems(true);
     }, 500);
     return () => clearTimeout(timer);
+  };
+
+  const convertSlugUrl = (str) => {
+    if (!str) return "";
+    str = slugify(str, {
+      lower: true,
+      locale: "vi",
+    });
+    return str;
   };
 
   return (
@@ -165,7 +175,9 @@ export default function Products() {
                         loadingItems ? (
                           <div class="products-item col c-12 l-3">
                             <Link
-                              to={`/product/${product._id}`}
+                              to={`/product/${convertSlugUrl(product.title)}-${
+                                product._id
+                              }.html`}
                               key={product._id}
                               style={{
                                 textDecoration: "none",

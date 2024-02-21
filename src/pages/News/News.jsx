@@ -19,6 +19,7 @@ import { publicRequest } from "../../requestMethods";
 import { useDispatch, useSelector } from "react-redux";
 import { getNews } from "../../redux/apiCalls";
 import { getCategories } from "../../redux/apiCalls";
+import slugify from "slugify";
 export default function News() {
   const SearchIconStyle = styled.div`
     font-size: 35px;
@@ -71,9 +72,16 @@ export default function News() {
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-
+  const convertSlugUrl = (str) => {
+    if (!str) return "";
+    str = slugify(str, {
+      lower: true,
+      locale: "vi",
+    });
+    return str;
+  };
   return (
-    <section style={{overflowX:"hidden",overflowY:"hidden"}}>
+    <section style={{ overflowX: "hidden", overflowY: "hidden" }}>
       <Navbar />
       <SliderHeader title="Tin Tức" />
       {loading ? (
@@ -84,7 +92,7 @@ export default function News() {
                 {loadingCat ? (
                   currentNews.map((New) => (
                     <Link
-                      to={`/new/${New._id}`}
+                      to={`/new/${convertSlugUrl(New.title)}-${New._id}.html`}
                       key={New._id}
                       style={{ textDecoration: "none", color: "#000000" }}
                     >

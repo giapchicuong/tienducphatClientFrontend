@@ -11,14 +11,17 @@ import "./new.css";
 import Box from "@mui/material/Box";
 import { useDispatch, useSelector } from "react-redux";
 import { getNews } from "../../redux/apiCalls";
+import slugify from "slugify";
 export default function New() {
   const location = useLocation();
-  const id = location.pathname.split("/")[2];
   // const [New, setNew] = useState({});
   // const [News, setNews] = useState([]);
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
-  const newId = location.pathname.split("/")[2];
+  // const newId = location.pathname.split("/")[2];
+  const pathParts = location.pathname.split("/");
+  const newIdWithHtml = pathParts[pathParts.length - 1];
+  const newId = newIdWithHtml.split("-").pop().replace(".html", "");
   const News = useSelector((state) => state.new.news);
   const New = useSelector((state) =>
     state.new.news.find((New) => New._id === newId)
@@ -48,17 +51,22 @@ export default function New() {
     setLoading(true);
   }, [dispatch]);
 
+  const convertSlugUrl = (str) => {
+    if (!str) return "";
+    str = slugify(str, {
+      lower: true,
+      locale: "vi",
+    });
+    return str;
+  };
   return (
-    <div style={{overflowX:"hidden",overflowY:"hidden"}}>
+    <div style={{ overflowX: "hidden", overflowY: "hidden" }}>
       <Navbar />
       <div class="new">
         <div class="grid wide">
           <div class="row sm-gutter">
             <div class="new-left col c-12 l-8">
-              <div
-                class="new-left_item"
-                onclick="goToProduct('newsItem.html')"
-              >
+              <div class="new-left_item" onclick="goToProduct('newsItem.html')">
                 <div class="new-img">
                   <img src={New.img} alt={New.title} />
                 </div>
@@ -99,7 +107,7 @@ export default function New() {
                 {loading ? (
                   News.map((New) => (
                     <Link
-                      to={`/new/${New._id}`}
+                      to={`/new/${convertSlugUrl(New.title)}-${New._id}.html`}
                       key={New._id}
                       style={{ textDecoration: "none", color: "#000000" }}
                     >
@@ -108,9 +116,7 @@ export default function New() {
                           <div class="new-lists_img col c-4">
                             <img src={New.img} alt={New.title} />
                           </div>
-                          <div class="new-lists_title col c-8">
-                            {New.title}
-                          </div>
+                          <div class="new-lists_title col c-8">{New.title}</div>
                         </div>
                       </div>
                     </Link>

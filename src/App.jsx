@@ -25,7 +25,8 @@ const App = () => {
     getCategories(dispatch);
     getProducts(dispatch);
     getNews(dispatch);
-  },[dispatch]);
+  }, [dispatch]);
+
   return (
     <Router>
       <Switch>

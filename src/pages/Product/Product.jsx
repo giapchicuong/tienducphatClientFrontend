@@ -23,6 +23,7 @@ import Stack from "@mui/material/Stack";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import slugify from "slugify";
 const Container = styled.div`
   padding: 50px 0;
   ${mobile({ padding: 0, width: "100vw", marginRight: "10px" })}
@@ -300,13 +301,17 @@ const Product = () => {
   const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
-  const productId = location.pathname.split("/")[2];
+  // const productId = location.pathname.split("/")[2];
+  const pathParts = location.pathname.split("/");
+  const productIdWithHtml = pathParts[pathParts.length - 1];
+  const productId = productIdWithHtml.split("-").pop().replace(".html", "");
+
   const products = useSelector((state) => state.product.products);
   const product = useSelector((state) =>
     state.product.products.find((product) => product._id === productId)
   );
-  const sanitizedHTMLdescSummary = DOMPurify.sanitize(product.descSummary);
-  const sanitizedHTMLdescDetails = DOMPurify.sanitize(product.descDetails);
+  const sanitizedHTMLdescSummary = DOMPurify.sanitize(product?.descSummary);
+  const sanitizedHTMLdescDetails = DOMPurify.sanitize(product?.descDetails);
   useEffect(() => {
     getProducts(dispatch);
     setLoading(true);
@@ -324,7 +329,7 @@ const Product = () => {
     dispatch(addProduct({ ...product, quantity }));
   };
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedImg, setSelectedImg] = useState(product.imgs[currentIndex]);
+  const [selectedImg, setSelectedImg] = useState(product?.imgs[currentIndex]);
   const [timeoutId, setTimeoutId] = useState(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
@@ -387,16 +392,25 @@ const Product = () => {
   }, [randomViews]);
 
   const [randomComment, setRandomComment] = useState(null);
-  const generateRandomComment= () => {
+  const generateRandomComment = () => {
     return Math.floor(Math.random() * 20) + 10;
   };
   useEffect(() => {
     // Generate the random views only once when the component mounts
     if (!randomComment) {
-      const newRandomComment= generateRandomComment();
+      const newRandomComment = generateRandomComment();
       setRandomComment(newRandomComment);
     }
   }, [randomComment]);
+
+  const convertSlugUrl = (str) => {
+    if (!str) return "";
+    str = slugify(str, {
+      lower: true,
+      locale: "vi",
+    });
+    return str;
+  };
   return (
     <div style={{ overflowX: "hidden", overflowY: "hidden" }}>
       <Navbar />
@@ -529,7 +543,9 @@ const Product = () => {
                   {products.map((product, index) => (
                     <RelatedProductItem key={index}>
                       <Link
-                        to={`/product/${product._id}`}
+                        to={`/product/${convertSlugUrl(product.title)}-${
+                          product._id
+                        }.html`}
                         style={{ textDecoration: "none" }}
                         onClick={() => scrollToPosition(0)}
                       >
